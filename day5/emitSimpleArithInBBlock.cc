@@ -73,7 +73,7 @@ int main(int argc, char const *argv[])
     Value *val = createArith(Builder, Args1, constant);
     
     // create return statement for the function
-    Builder.CreateRet(Builder.getInt32(0));
+    Builder.CreateRet(val);
     
     // verify whether the function is valid
     verifyFunction(*foofunc);
