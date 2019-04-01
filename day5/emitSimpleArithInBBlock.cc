@@ -68,9 +68,17 @@ int main(int argc, char const *argv[])
     Builder.SetInsertPoint(entry);
 
     // adding a aritmetic expression inside basic block entry
+    /*
+    -- this function prototype 
+    arg_iterator 	arg_begin ()
+    --- cannot be passed into the value pointer instead needs iterated approach
     Value *Args1 = foofunc->arg_begin();
+    
+    */
     Value *constant= Builder.getInt32(16);
-    Value *val = createArith(Builder, Args1, constant);
+    //this is a test for multiply function
+    Value *constantVal= Builder.getInt32(22); 
+    Value *val = createArith(Builder, constantVal, constant);
     
     // create return statement for the function
     Builder.CreateRet(val);
